@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 
 import React from "react";
-
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
@@ -25,8 +25,9 @@ function PrivateRoute({ children, role }: { children: React.ReactNode; role: "us
 function App() {
   return (
     <AuthProvider>
+
       <BrowserRouter>
-        <nav className="flex gap-4 p-4 bg-gray-200">
+        {/* <nav className="flex gap-4 p-4 bg-gray-200">
           <Link to="/">Home</Link>
           <Link to="/admin">Admin</Link>
           <Link to="/login">Login</Link>
@@ -42,7 +43,20 @@ function App() {
               <Admin />
             </PrivateRoute>
           } />
-        </Routes>
+        </Routes> */}
+
+
+        <Navbar />
+        <div className="p-6 mt-5">
+
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </AuthProvider>
   );
