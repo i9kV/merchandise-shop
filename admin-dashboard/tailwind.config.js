@@ -1,5 +1,5 @@
 module.exports = {
-  darkMode: 'class', // เปิดใช้งาน dark mode
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
